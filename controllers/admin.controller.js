@@ -8,7 +8,7 @@ const mailer = require('nodemailer');
 const home = async (req, res) => {
     try {
         let data = await productDb.find();
-        return res.render("Dashboard", { products: data })
+        return res.render("Dashboard", { ProductData: data })
     } catch (err) {
         console.log(err)
     }

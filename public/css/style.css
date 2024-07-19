@@ -1,9 +1,9 @@
 body {
     background-image: linear-gradient(80deg, rgb(36, 6, 39),
-            rgb(2, 1, 2), rgb(147, 59, 247));
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: relative;
+            rgb(2, 1, 2), rgb(147, 59, 247)) !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    position: relative !important;
 }
 
 ::-webkit-scrollbar {
