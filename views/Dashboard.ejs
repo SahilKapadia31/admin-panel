@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
+    <meta name="description"
+        content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Product Admin </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #fce4ec;
+        }
+
+        .page-wrapper {
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+
+        .card {
+            background-color: #fce4ec;
+        }
+
+        .card img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <%- include('./partials/header') %>
+
+            <!-- ============================================================== -->
+            <%- include('./partials/aside') %>
+
+
+                <!-- Page wrapper  -->
+                <!-- ============================================================== -->
+
+                <!-- flash message -->
+                <div class="page-wrapper flex-grow-1 p-6">
+                    <% if (messages && messages.length> 0) { %>
+                        <% messages.forEach(message=> { %>
+                            <% if (message==="ProductAdded" ) { %>
+                                <div class="alert alert-info">New Product Added Successfully</div>
+                                <% } %>
+                                    <% if (message==="deleteProduct" ) { %>
+                                        <div class="alert alert-info">Deleted Product Successfully</div>
+                                        <% } %>
+                                            <% if (message==="UpadteProduct" ) { %>
+                                                <div class="alert alert-info">Product Updated Successfully</div>
+                                                <% } %>
+                                                    <% }) %>
+                                                        <% } %>
+
+                                                            <!-- catagory flash message -->
+                                                            <% if (messages && messages.length> 0) { %>
+                                                                <% messages.forEach(message=> { %>
+                                                                    <% if (message==="CatAdded" ) { %>
+                                                                        <div
+                                                                            class="mt-4 p-2 bg-green-200 text-green-800 rounded">
+                                                                            New Category Added Successfully</div>
+                                                                        <% } %>
+                                                                            <% if (messages && messages.length> 0) { %>
+                                                                                <% messages.forEach(message=> { %>
+                                                                                    <% if (message==="subCatAdded" ) {
+                                                                                        %>
+                                                                                        <div
+                                                                                            class="mt-4 p-2 bg-green-200 text-green-800 rounded">
+                                                                                            New SubCategory Added
+                                                                                            Successfully</div>
+                                                                                        <% } %>
+                                                                                            <% if
+                                                                                                (message==="extCatAdded"
+                                                                                                ) { %>
+                                                                                                <div
+                                                                                                    class="alert alert-info">
+                                                                                                    New ExtraCategory
+                                                                                                    Added Successfully
+                                                                                                </div>
+                                                                                                <% } %>
+                                                                                                    <% }) %>
+                                                                                                        <% } %>
+                                                                                                            <% }) %>
+                                                                                                                <% } %>
+
+                                                                                                                    <div
+                                                                                                                        class="row">
+                                                                                                                        <div
+                                                                                                                            class="col-md-4">
+                                                                                                                            <div
+                                                                                                                                class="card">
+                                                                                                                                <div
+                                                                                                                                    class="card-body">
+                                                                                                                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-blue?wid=5120&hei=2880&fmt=webp&qlt=70&.v=cHJOTXEwTU92OEtKVDV2cVB1R2FTSjlERndlRTljaUdZeHJGM3dlLzR2OGlYQ0tYMHd1OS9ZREtnNzFSR1owOHF2TWlpSzUzejRCZGt2SjJUNGl1VEtsS0dZaHBma3VTb3UwU2F6dkc4TGZPaDVjV2NEQVBZbTZldUQyWkpKRHk=&traceId=1"
+                                                                                                                                        alt="img"
+                                                                                                                                        class="img-fluid mb-3">
+                                                                                                                                    <h4
+                                                                                                                                        class="card-title">
+                                                                                                                                        Apple
+                                                                                                                                        iPhone
+                                                                                                                                        15
+                                                                                                                                        (Blue,
+                                                                                                                                        128
+                                                                                                                                        GB)
+                                                                                                                                    </h4>
+                                                                                                                                    <h5
+                                                                                                                                        class="card-text">
+                                                                                                                                        ₹64,999
+                                                                                                                                    </h5>
+                                                                                                                                    <p
+                                                                                                                                        class="card-text">
+                                                                                                                                        Experience
+                                                                                                                                        the
+                                                                                                                                        iPhone
+                                                                                                                                        15
+                                                                                                                                        your
+                                                                                                                                        dynamic
+                                                                                                                                        companion.
+                                                                                                                                        Dynamic
+                                                                                                                                        Island
+                                                                                                                                        ensures
+                                                                                                                                        you
+                                                                                                                                        stay
+                                                                                                                                        connected,
+                                                                                                                                        bubbling
+                                                                                                                                        up
+                                                                                                                                        alerts
+                                                                                                                                        seamlessly
+                                                                                                                                        while
+                                                                                                                                        you're
+                                                                                                                                        busy.
+                                                                                                                                    </p>
+                                                                                                                                    <a href="#"
+                                                                                                                                        class="btn btn-primary">Edit</a>
+                                                                                                                                    <a href="#"
+                                                                                                                                        class="btn btn-danger">Delete</a>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div
+                                                                                                                            class="col-md-4">
+                                                                                                                            <div
+                                                                                                                                class="card">
+                                                                                                                                <div
+                                                                                                                                    class="card-body">
+                                                                                                                                    <img src="https://www.rico.in/cdn/shop/products/807_Infographics-1_1500x.jpg?v=1648099367"
+                                                                                                                                        alt="img"
+                                                                                                                                        class="img-fluid mb-3">
+                                                                                                                                    <h4
+                                                                                                                                        class="card-title">
+                                                                                                                                        Crompton
+                                                                                                                                        Ceiling
+                                                                                                                                        Fan
+                                                                                                                                        (Lustre
+                                                                                                                                        Brown,
+                                                                                                                                        Pack
+                                                                                                                                        of
+                                                                                                                                        1)
+                                                                                                                                    </h4>
+                                                                                                                                    <h5
+                                                                                                                                        class="card-text">
+                                                                                                                                        ₹1,418
+                                                                                                                                    </h5>
+                                                                                                                                    <p
+                                                                                                                                        class="card-text">
+                                                                                                                                        You
+                                                                                                                                        can
+                                                                                                                                        enjoy
+                                                                                                                                        a
+                                                                                                                                        cool
+                                                                                                                                        and
+                                                                                                                                        comfortable
+                                                                                                                                        environment
+                                                                                                                                        without
+                                                                                                                                        compromising
+                                                                                                                                        your
+                                                                                                                                        peace,
+                                                                                                                                        thanks
+                                                                                                                                        to
+                                                                                                                                        the
+                                                                                                                                        Crompton
+                                                                                                                                        Surebreeze
+                                                                                                                                        Sea
+                                                                                                                                        Sapphira
+                                                                                                                                        Ceiling
+                                                                                                                                        Fan.
+                                                                                                                                    </p>
+                                                                                                                                    <a href="#"
+                                                                                                                                        class="btn btn-primary">Edit</a>
+                                                                                                                                    <a href="#"
+                                                                                                                                        class="btn btn-danger">Delete</a>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div
+                                                                                                                            class="col-md-4">
+                                                                                                                            <div
+                                                                                                                                class="card">
+                                                                                                                                <div
+                                                                                                                                    class="card-body">
+                                                                                                                                    <img src="https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg"
+                                                                                                                                        alt="img"
+                                                                                                                                        class="img-fluid mb-3">
+                                                                                                                                    <h4
+                                                                                                                                        class="card-title">
+                                                                                                                                        HP
+                                                                                                                                        15s
+                                                                                                                                        Laptop
+                                                                                                                                    </h4>
+                                                                                                                                    <h5
+                                                                                                                                        class="card-text">
+                                                                                                                                        ₹83,999
+                                                                                                                                    </h5>
+                                                                                                                                    <p
+                                                                                                                                        class="card-text">
+                                                                                                                                        You
+                                                                                                                                        can
+                                                                                                                                        complete
+                                                                                                                                        your
+                                                                                                                                        tasks
+                                                                                                                                        rapidly
+                                                                                                                                        with
+                                                                                                                                        the
+                                                                                                                                        HP
+                                                                                                                                        15s
+                                                                                                                                        Laptop.
+                                                                                                                                        Owing
+                                                                                                                                        to
+                                                                                                                                        its
+                                                                                                                                        high
+                                                                                                                                        resolution
+                                                                                                                                        and
+                                                                                                                                        sophisticated
+                                                                                                                                        display
+                                                                                                                                        of
+                                                                                                                                        colours.
+                                                                                                                                    </p>
+                                                                                                                                    <a href="#"
+                                                                                                                                        class="btn btn-primary">Edit</a>
+                                                                                                                                    <a href="#"
+                                                                                                                                        class="btn btn-danger">Delete</a>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <%
+                                                                                                                            ProductData.forEach((product)=>
+                                                                                                                            {
+                                                                                                                            %>
+                                                                                                                            <div
+                                                                                                                                class="col-md-4">
+                                                                                                                                <div
+                                                                                                                                    class="card">
+                                                                                                                                    <div
+                                                                                                                                        class="card-body">
+                                                                                                                                        <img src="<%= product.image %>"
+                                                                                                                                            alt="img"
+                                                                                                                                            class="img-fluid mb-3">
+                                                                                                                                        <h4
+                                                                                                                                            class="card-title">
+                                                                                                                                            <%= product.productname
+                                                                                                                                                %>
+                                                                                                                                        </h4>
+                                                                                                                                        <h5
+                                                                                                                                            class="card-text">
+                                                                                                                                            <%= product.productprice
+                                                                                                                                                %>
+                                                                                                                                        </h5>
+                                                                                                                                        <p
+                                                                                                                                            class="card-text">
+                                                                                                                                            <%= product.description
+                                                                                                                                                %>
+                                                                                                                                        </p>
+                                                                                                                                        <a href="/product/editProduct/<%= product._id %>"
+                                                                                                                                            class="btn btn-primary">Edit</a>
+                                                                                                                                        <a href="/product/delete/<%= product._id %>"
+                                                                                                                                            class="btn btn-danger">Delete</a>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <% })
+                                                                                                                                %>
+                                                                                                                    </div>
+                </div>
+
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- All Jquery -->
+                <!-- ============================================================== -->
+                <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+                <!-- Bootstrap tether Core JavaScript -->
+                <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+                <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+                <!--Wave Effects -->
+                <script src="../dist/js/waves.js"></script>
+                <!--Menu sidebar -->
+                <script src="../dist/js/sidebarmenu.js"></script>
+                <!--Custom JavaScript -->
+                <script src="../dist/js/custom.min.js"></script>
+                <!--This page JavaScript -->
+                <!-- <script src="../dist/js/pages/dashboards/dashboard1.js"></script> -->
+                <!-- Charts js Files -->
+                <script src="../assets/libs/flot/excanvas.js"></script>
+                <script src="../assets/libs/flot/jquery.flot.js"></script>
+                <script src="../assets/libs/flot/jquery.flot.pie.js"></script>
+                <script src="../assets/libs/flot/jquery.flot.time.js"></script>
+                <script src="../assets/libs/flot/jquery.flot.stack.js"></script>
+                <script src="../assets/libs/flot/jquery.flot.crosshair.js"></script>
+                <script src="../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+                <script src="../dist/js/pages/chart/chart-page-init.js"></script>
+</body>
+
+</html>
